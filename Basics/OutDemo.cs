@@ -1,18 +1,15 @@
 using System;
-
-public class OutDemo
+class OutDemo
 {
-    private static void number(out int a, out int b)
+    public static void changeValue(out int num)
     {
-        a = 45;
-        b = 62;
+        num = 0;
+        num = num+5;
     }
-
-    public static void Main()
+    static void Main(string []args)
     {
-        int a,b;
-        number(out a,out b);
-        Console.WriteLine("Number 1 is : "+a);
-        Console.WriteLine("Number 2 is : "+b);
+        int num;
+        changeValue(out num); // out allows passing reference to variable which is uninitialized.
+        Console.WriteLine(num);
     }
 }
